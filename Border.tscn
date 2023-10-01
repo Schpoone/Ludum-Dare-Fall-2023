@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://j0oacaufer70"]
+
+[ext_resource type="Script" path="res://DrawBorder.gd" id="1_cfh3e"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_flyju"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3egh3"]
+b = Vector2(10, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yp5lf"]
+a = Vector2(10, 0)
+b = Vector2(10, 10)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_k3nxg"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tupyj"]
+a = Vector2(10, 10)
+
+[node name="Border" type="StaticBody2D"]
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_flyju")
+script = ExtResource("1_cfh3e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(362.029, 342.868)
+centered = false
+
+[node name="Top Edge" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_3egh3")
+
+[node name="Right Edge" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_yp5lf")
+
+[node name="Bot Edge" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_k3nxg")
+
+[node name="Left Edge" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_tupyj")

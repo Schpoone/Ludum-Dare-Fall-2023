@@ -1,12 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cecd7xsveb1ch"]
+[gd_scene load_steps=5 format=3 uid="uid://cecd7xsveb1ch"]
 
+[ext_resource type="PackedScene" uid="uid://j0oacaufer70" path="res://Border.tscn" id="2_j6rmp"]
 [ext_resource type="PackedScene" uid="uid://dl54cq0it1sp5" path="res://Background.tscn" id="2_mqwrw"]
+[ext_resource type="PackedScene" uid="uid://duto4c7l44mja" path="res://Boss.tscn" id="3_d8540"]
 [ext_resource type="PackedScene" uid="uid://dsxxm88evgre0" path="res://Player.tscn" id="3_kbxa5"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("2_mqwrw")]
 
+[node name="Border" parent="." instance=ExtResource("2_j6rmp")]
+position = Vector2(346, 72)
+scale = Vector2(50, 50)
+collision_mask = 4
+
 [node name="Player" parent="." instance=ExtResource("3_kbxa5")]
-z_index = 1
-position = Vector2(595, 300)
+position = Vector2(573, 444)
+scale = Vector2(0.5, 0.5)
+speed = 500.0
+
+[node name="Boss" parent="." instance=ExtResource("3_d8540")]
+position = Vector2(592, 250)
+scale = Vector2(0.736821, 0.736821)
+speed = 200.0

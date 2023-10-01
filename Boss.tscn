@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://duto4c7l44mja"]
+
+[ext_resource type="Script" path="res://BossController.gd" id="1_m3gaf"]
+[ext_resource type="Texture2D" uid="uid://bh0jfn4gowyfk" path="res://icon.svg" id="2_t4sqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo8mo"]
+size = Vector2(132.5, 131)
+
+[node name="Boss" type="CharacterBody2D"]
+collision_layer = 4
+motion_mode = 1
+script = ExtResource("1_m3gaf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eo8mo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_t4sqh")
+
+[node name="ProjectileTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]

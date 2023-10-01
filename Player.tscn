@@ -9,10 +9,8 @@ size = Vector2(132.5, 131)
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_0ddm2")
-speed = 500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.25, 1.5)
 shape = SubResource("RectangleShape2D_eo8mo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

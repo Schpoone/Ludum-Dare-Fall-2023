@@ -1,15 +1,19 @@
 class_name PlayerController
 extends CharacterBody2D
 
-@export var speed = 100
-var direction: Vector2
+@export var speed: float
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var x_direction = Input.get_axis("ui_left", "ui_right") * Vector2.RIGHT
-	var y_direction = Input.get_axis("ui_down", "ui_up") * Vector2.UP
-	direction = (x_direction + y_direction).normalized()
+func _process(_delta):
+	pass
 
-func _physics_process(delta):
-	velocity = direction * speed
+func get_input():
+	look_at(get_global_mouse_position())
+	velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down") * speed
+
+func _physics_process(_delta):
+	get_input()
 	move_and_slide()
+
+func hit():
+	queue_free()
