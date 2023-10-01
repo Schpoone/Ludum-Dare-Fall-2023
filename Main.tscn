@@ -9,5 +9,4 @@
 
 [node name="Player" parent="." instance=ExtResource("3_kbxa5")]
 z_index = 1
-position = Vector2(554, 321)
-speed = 500
+position = Vector2(595, 300)

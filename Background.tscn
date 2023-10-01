@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dl54cq0it1sp5"]
+[gd_scene load_steps=4 format=3 uid="uid://dl54cq0it1sp5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wxk3j"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_flyju"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n4tw4"]
 
 [node name="Background" type="Node2D"]
 
@@ -8,3 +12,17 @@
 position = Vector2(574.5, 321)
 scale = Vector2(1169, 666)
 mesh = SubResource("BoxMesh_wxk3j")
+
+[node name="Border" type="StaticBody2D" parent="."]
+position = Vector2(328, 63)
+physics_material_override = SubResource("PhysicsMaterial_flyju")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border"]
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 500, 0, 500, 500, 0, 500)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Border"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(249.625, 250.375)
+scale = Vector2(494.75, 503.25)
+mesh = SubResource("BoxMesh_n4tw4")
