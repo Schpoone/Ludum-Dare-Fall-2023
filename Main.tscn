@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cecd7xsveb1ch"]
+
+[ext_resource type="PackedScene" uid="uid://dl54cq0it1sp5" path="res://Background.tscn" id="2_mqwrw"]
+[ext_resource type="PackedScene" uid="uid://dsxxm88evgre0" path="res://Player.tscn" id="3_kbxa5"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("2_mqwrw")]
+
+[node name="Player" parent="." instance=ExtResource("3_kbxa5")]
+z_index = 1
+position = Vector2(554, 321)
+speed = 500

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl54cq0it1sp5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wxk3j"]
+
+[node name="Background" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(574.5, 321)
+scale = Vector2(1169, 666)
+mesh = SubResource("BoxMesh_wxk3j")
