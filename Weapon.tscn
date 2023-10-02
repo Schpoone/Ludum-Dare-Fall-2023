@@ -1,11 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsxxm88evgre0"]
+[gd_scene load_steps=7 format=3 uid="uid://hkasdlh5fkk7"]
 
-[ext_resource type="Script" path="res://PlayerController.gd" id="1_0ddm2"]
-[ext_resource type="Texture2D" uid="uid://bh0jfn4gowyfk" path="res://icon.svg" id="2_fwhs5"]
-[ext_resource type="Script" path="res://Weapon.gd" id="3_iuarb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo8mo"]
-size = Vector2(128, 128)
+[ext_resource type="Script" path="res://Weapon.gd" id="1_e8j0e"]
+[ext_resource type="Texture2D" uid="uid://bh0jfn4gowyfk" path="res://icon.svg" id="2_0ilnh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1m655"]
 size = Vector2(128, 24)
@@ -46,31 +42,21 @@ _data = {
 "Stab": SubResource("Animation_83swe")
 }
 
-[node name="Player" type="CharacterBody2D"]
-motion_mode = 1
-script = ExtResource("1_0ddm2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_eo8mo")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_fwhs5")
-
-[node name="Weapon" type="Area2D" parent="."]
+[node name="Weapon" type="Area2D"]
 collision_layer = 16
 collision_mask = 4
-script = ExtResource("3_iuarb")
+script = ExtResource("1_e8j0e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1m655")
 
-[node name="Sprite2D" type="Sprite2D" parent="Weapon"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.137255, 0.137255, 0.137255, 1)
 z_index = -1
 scale = Vector2(1, 0.19)
-texture = ExtResource("2_fwhs5")
+texture = ExtResource("2_0ilnh")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Weapon"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_process_mode = 0
 speed_scale = 3.0
 libraries = {

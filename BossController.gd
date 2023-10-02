@@ -17,7 +17,6 @@ func _physics_process(delta):
 		if collision.get_collider().has_method("hit"):
 			collision.get_collider().hit()
 
-
 func _on_projectile_timer_timeout():
 	var p = projectile.instantiate()
 	p.start(global_position)
